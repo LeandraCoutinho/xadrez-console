@@ -19,4 +19,9 @@ public class Peca
     {
         QteMovimentos++;
     }
+
+    public virtual bool[,] movimentosPossiveis()
+    {
+        throw new NotImplementedException();
+    }
 }
