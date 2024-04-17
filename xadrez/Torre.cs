@@ -61,7 +61,7 @@ public class Torre : Peca
                 break;
             }
 
-            pos.Linha = pos.Coluna + 1;
+            pos.Coluna = pos.Coluna + 1;
         }
         
         // esquerda 
@@ -74,7 +74,7 @@ public class Torre : Peca
                 break;
             }
 
-            pos.Linha = pos.Linha - 1;
+            pos.Coluna = pos.Coluna - 1;
         }
 
         return mat;

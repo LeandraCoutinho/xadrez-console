@@ -16,9 +16,7 @@ class Program
                 try
                 {
                     Console.Clear();
-                    Tela.ImprimirTabuleiro(partida.tab);
-                    Console.WriteLine("Turno " + partida.turno);
-                    Console.WriteLine("Aguardando jogada: " + partida.JogadorAtual);
+                    Tela.ImprimirPartida(partida);
 
                     Console.WriteLine();
                     Console.Write("Origem: ");
@@ -49,6 +47,8 @@ class Program
         {
             Console.WriteLine(e.Message);
         }
-        
+
+        Console.ReadLine();
+
     }
 }

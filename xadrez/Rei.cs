@@ -61,14 +61,14 @@ public class Rei : Peca
         }
         
         // so 
-        pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna - 1);
+        pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna - 1);
         if (Tab.PosicaoValida(pos) && podeMover(pos))
         {
             mat[pos.Linha, pos.Coluna] = true;
         }
         
         // esquerda 
-        pos.DefinirValores(Posicao.Linha, Posicao.Coluna + 1);
+        pos.DefinirValores(Posicao.Linha, Posicao.Coluna - 1);
         if (Tab.PosicaoValida(pos) && podeMover(pos))
         {
             mat[pos.Linha, pos.Coluna] = true;
