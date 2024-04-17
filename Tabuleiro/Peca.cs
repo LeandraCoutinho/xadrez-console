@@ -19,6 +19,11 @@ public class Peca
     {
         QteMovimentos++;
     }
+    
+    public void DecrementarQteMovimentos()
+    {
+        QteMovimentos--;
+    }
 
     public bool ExisteMovimentosPossiveis()
     {
