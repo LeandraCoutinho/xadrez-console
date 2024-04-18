@@ -25,7 +25,6 @@ public class Tela
             Console.WriteLine("XEQUEMATE!");
             Console.WriteLine("Vencedor: " + partida.JogadorAtual);
         }
-        
     }
 
     public static void ImprimirPecasCapturadas(PartidaDeXadrez partida)
@@ -49,9 +48,10 @@ public class Tela
         {
             Console.Write(x + " ");
         }
+
         Console.Write("]");
     }
-    
+
     public static void ImprimirTabuleiro(Tabuleiro tab)
     {
         for (int i = 0; i < tab.Linhas; i++)
@@ -59,12 +59,15 @@ public class Tela
             Console.Write(8 - i + " ");
             for (int j = 0; j < tab.Colunas; j++)
             {
-              ImprimirPeca(tab.peca(i,j));
+                ImprimirPeca(tab.peca(i, j));
             }
+
             Console.WriteLine();
         }
+
         Console.WriteLine("  a b c d e f g h");
     }
+
     public static void ImprimirTabuleiro(Tabuleiro tab, bool[,] posicoesPossiveis)
     {
         ConsoleColor fundoOriginal = Console.BackgroundColor;
@@ -82,11 +85,14 @@ public class Tela
                 {
                     Console.BackgroundColor = fundoOriginal;
                 }
-                ImprimirPeca(tab.peca(i,j));
+
+                ImprimirPeca(tab.peca(i, j));
                 Console.BackgroundColor = fundoOriginal;
             }
+
             Console.WriteLine();
         }
+
         Console.WriteLine("  a b c d e f g h");
         Console.BackgroundColor = fundoOriginal;
     }
@@ -118,8 +124,8 @@ public class Tela
                 Console.Write(peca);
                 Console.ForegroundColor = aux;
             }
+
             Console.Write(" ");
         }
-        
     }
 }

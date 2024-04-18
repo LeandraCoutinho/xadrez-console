@@ -12,7 +12,7 @@ public class Tabuleiro
         Colunas = colunas;
         pecas = new Peca[linhas, colunas];
     }
-    
+
     public Peca peca(int linha, int coluna)
     {
         return pecas[linha, coluna];
@@ -22,7 +22,7 @@ public class Tabuleiro
     {
         return pecas[pos.Linha, pos.Coluna];
     }
-    
+
     public bool ExistePeca(Posicao pos)
     {
         ValidarPosicao(pos);
@@ -35,6 +35,7 @@ public class Tabuleiro
         {
             throw new TabuleiroException("Já existe uma peça nessa posição!");
         }
+
         pecas[pos.Linha, pos.Coluna] = p;
         p.Posicao = pos;
     }
@@ -45,6 +46,7 @@ public class Tabuleiro
         {
             return null;
         }
+
         Peca aux = peca(pos);
         aux.Posicao = null;
         pecas[pos.Linha, pos.Coluna] = null;
@@ -60,7 +62,7 @@ public class Tabuleiro
 
         return true;
     }
-    
+
     // Criando exceção para testar se é válido
     public void ValidarPosicao(Posicao pos)
     {

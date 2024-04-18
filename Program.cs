@@ -41,6 +41,7 @@ class Program
                     Console.ReadLine();
                 }
             }
+
             Console.Clear();
             Tela.ImprimirPartida(partida);
         }
@@ -51,6 +52,5 @@ class Program
         }
 
         Console.ReadLine();
-
     }
 }

@@ -19,7 +19,7 @@ public class Peca
     {
         QteMovimentos++;
     }
-    
+
     public void DecrementarQteMovimentos()
     {
         QteMovimentos--;
@@ -38,10 +38,11 @@ public class Peca
                 }
             }
         }
+
         return false;
     }
 
-    public bool PodeMoverPara(Posicao pos)
+    public bool MovimentoPossivel(Posicao pos)
     {
         return movimentosPossiveis()[pos.Linha, pos.Coluna];
     }
