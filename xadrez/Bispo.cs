@@ -13,13 +13,13 @@ class Bispo : Peca
         return "B";
     }
 
-    private bool podeMover(Posicao pos)
+    private bool PodeMover(Posicao pos)
     {
-        var p = Tab.peca(pos);
+        var p = Tab.Peca(pos);
         return p == null || p.Cor != Cor;
     }
 
-    public override bool[,] movimentosPossiveis()
+    public override bool[,] MovimentosPossiveis()
     {
         var mat = new bool[Tab.Linhas, Tab.Colunas];
 
@@ -27,37 +27,37 @@ class Bispo : Peca
 
         // NO
         pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna - 1);
-        while (Tab.PosicaoValida(pos) && podeMover(pos))
+        while (Tab.PosicaoValida(pos) && PodeMover(pos))
         {
             mat[pos.Linha, pos.Coluna] = true;
-            if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor) break;
+            if (Tab.Peca(pos) != null && Tab.Peca(pos).Cor != Cor) break;
             pos.DefinirValores(pos.Linha - 1, pos.Coluna - 1);
         }
 
         // NE
         pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna + 1);
-        while (Tab.PosicaoValida(pos) && podeMover(pos))
+        while (Tab.PosicaoValida(pos) && PodeMover(pos))
         {
             mat[pos.Linha, pos.Coluna] = true;
-            if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor) break;
+            if (Tab.Peca(pos) != null && Tab.Peca(pos).Cor != Cor) break;
             pos.DefinirValores(pos.Linha - 1, pos.Coluna + 1);
         }
 
         // SE
         pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna + 1);
-        while (Tab.PosicaoValida(pos) && podeMover(pos))
+        while (Tab.PosicaoValida(pos) && PodeMover(pos))
         {
             mat[pos.Linha, pos.Coluna] = true;
-            if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor) break;
+            if (Tab.Peca(pos) != null && Tab.Peca(pos).Cor != Cor) break;
             pos.DefinirValores(pos.Linha + 1, pos.Coluna + 1);
         }
 
         // SO
         pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna - 1);
-        while (Tab.PosicaoValida(pos) && podeMover(pos))
+        while (Tab.PosicaoValida(pos) && PodeMover(pos))
         {
             mat[pos.Linha, pos.Coluna] = true;
-            if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor) break;
+            if (Tab.Peca(pos) != null && Tab.Peca(pos).Cor != Cor) break;
             pos.DefinirValores(pos.Linha + 1, pos.Coluna - 1);
         }
 

@@ -17,16 +17,16 @@ class Peao : Peca
 
     private bool existeInimigo(Posicao pos)
     {
-        Peca p = Tab.peca(pos);
+        Peca p = Tab.Peca(pos);
         return p != null && p.Cor != Cor;
     }
 
-    private bool livre(Posicao pos)
+    private bool Livre(Posicao pos)
     {
-        return Tab.peca(pos) == null;
+        return Tab.Peca(pos) == null;
     }
 
-    public override bool[,] movimentosPossiveis()
+    public override bool[,] MovimentosPossiveis()
     {
         bool[,] mat = new bool[Tab.Linhas, Tab.Colunas];
 
@@ -35,14 +35,14 @@ class Peao : Peca
         if (Cor == Cor.Branca)
         {
             pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna);
-            if (Tab.PosicaoValida(pos) && livre(pos))
+            if (Tab.PosicaoValida(pos) && Livre(pos))
             {
                 mat[pos.Linha, pos.Coluna] = true;
             }
 
             pos.DefinirValores(Posicao.Linha - 2, Posicao.Coluna);
             Posicao p2 = new Posicao(Posicao.Linha - 1, Posicao.Coluna);
-            if (Tab.PosicaoValida(p2) && livre(p2) && Tab.PosicaoValida(pos) && livre(pos) && QteMovimentos == 0)
+            if (Tab.PosicaoValida(p2) && Livre(p2) && Tab.PosicaoValida(pos) && Livre(pos) && QteMovimentos == 0)
             {
                 mat[pos.Linha, pos.Coluna] = true;
             }
@@ -62,11 +62,11 @@ class Peao : Peca
             // #jogadaespecial en passant
             if (Posicao.Linha == 3) {
                 Posicao esquerda = new Posicao(Posicao.Linha, Posicao.Coluna - 1);
-                if (Tab.PosicaoValida(esquerda) && existeInimigo(esquerda) && Tab.peca(esquerda) == Partida.VulneravelEnPassant) {
+                if (Tab.PosicaoValida(esquerda) && existeInimigo(esquerda) && Tab.Peca(esquerda) == Partida.VulneravelEnPassant) {
                     mat[esquerda.Linha - 1, esquerda.Coluna] = true;
                 }
                 Posicao direita = new Posicao(Posicao.Linha, Posicao.Coluna + 1);
-                if (Tab.PosicaoValida(direita) && existeInimigo(direita) && Tab.peca(direita) == Partida.VulneravelEnPassant) {
+                if (Tab.PosicaoValida(direita) && existeInimigo(direita) && Tab.Peca(direita) == Partida.VulneravelEnPassant) {
                     mat[direita.Linha - 1, direita.Coluna] = true;
                 }
             }
@@ -74,14 +74,14 @@ class Peao : Peca
         else
         {
             pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna);
-            if (Tab.PosicaoValida(pos) && livre(pos))
+            if (Tab.PosicaoValida(pos) && Livre(pos))
             {
                 mat[pos.Linha, pos.Coluna] = true;
             }
 
             pos.DefinirValores(Posicao.Linha + 2, Posicao.Coluna);
             Posicao p2 = new Posicao(Posicao.Linha + 1, Posicao.Coluna);
-            if (Tab.PosicaoValida(p2) && livre(p2) && Tab.PosicaoValida(pos) && livre(pos) && QteMovimentos == 0)
+            if (Tab.PosicaoValida(p2) && Livre(p2) && Tab.PosicaoValida(pos) && Livre(pos) && QteMovimentos == 0)
             {
                 mat[pos.Linha, pos.Coluna] = true;
             }
@@ -101,11 +101,11 @@ class Peao : Peca
             // #jogadaespecial en passant
             if (Posicao.Linha == 4) {
                 Posicao esquerda = new Posicao(Posicao.Linha, Posicao.Coluna - 1);
-                if (Tab.PosicaoValida(esquerda) && existeInimigo(esquerda) && Tab.peca(esquerda) == Partida.VulneravelEnPassant) {
+                if (Tab.PosicaoValida(esquerda) && existeInimigo(esquerda) && Tab.Peca(esquerda) == Partida.VulneravelEnPassant) {
                     mat[esquerda.Linha + 1, esquerda.Coluna] = true;
                 }
                 Posicao direita = new Posicao(Posicao.Linha, Posicao.Coluna + 1);
-                if (Tab.PosicaoValida(direita) && existeInimigo(direita) && Tab.peca(direita) == Partida.VulneravelEnPassant) {
+                if (Tab.PosicaoValida(direita) && existeInimigo(direita) && Tab.Peca(direita) == Partida.VulneravelEnPassant) {
                     mat[direita.Linha + 1, direita.Coluna] = true;
                 }
             }

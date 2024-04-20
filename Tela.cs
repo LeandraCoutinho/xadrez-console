@@ -7,11 +7,11 @@ public class Tela
 {
     public static void ImprimirPartida(PartidaDeXadrez partida)
     {
-        ImprimirTabuleiro(partida.tab);
+        ImprimirTabuleiro(partida.Tab);
         Console.WriteLine();
         ImprimirPecasCapturadas(partida);
         Console.WriteLine();
-        Console.WriteLine("Turno " + partida.turno);
+        Console.WriteLine("Turno " + partida.Turno);
         if (!partida.Terminada)
         {
             Console.WriteLine("Aguardando jogada: " + partida.JogadorAtual);
@@ -59,7 +59,7 @@ public class Tela
             Console.Write(8 - i + " ");
             for (int j = 0; j < tab.Colunas; j++)
             {
-                ImprimirPeca(tab.peca(i, j));
+                ImprimirPeca(tab.Peca(i, j));
             }
 
             Console.WriteLine();
@@ -86,7 +86,7 @@ public class Tela
                     Console.BackgroundColor = fundoOriginal;
                 }
 
-                ImprimirPeca(tab.peca(i, j));
+                ImprimirPeca(tab.Peca(i, j));
                 Console.BackgroundColor = fundoOriginal;
             }
 

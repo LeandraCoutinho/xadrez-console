@@ -5,7 +5,7 @@ public class Peca
     public Posicao Posicao { get; set; }
     public Cor Cor { get; protected set; }
     public int QteMovimentos { get; protected set; }
-    public Tabuleiro Tab { get; set; }
+    public Tabuleiro Tab { get; protected set; }
 
     public Peca(Cor cor, Tabuleiro tab)
     {
@@ -27,7 +27,7 @@ public class Peca
 
     public bool ExisteMovimentosPossiveis()
     {
-        bool[,] mat = movimentosPossiveis();
+        bool[,] mat = MovimentosPossiveis();
         for (int i = 0; i < Tab.Linhas; i++)
         {
             for (int j = 0; j < Tab.Colunas; j++)
@@ -44,10 +44,10 @@ public class Peca
 
     public bool MovimentoPossivel(Posicao pos)
     {
-        return movimentosPossiveis()[pos.Linha, pos.Coluna];
+        return MovimentosPossiveis()[pos.Linha, pos.Coluna];
     }
 
-    public virtual bool[,] movimentosPossiveis()
+    public virtual bool[,] MovimentosPossiveis()
     {
         throw new NotImplementedException();
     }
